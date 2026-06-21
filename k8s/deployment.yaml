@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: flask-app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: flask-app
+
+  template:
+    metadata:
+      labels:
+        app: flask-app
+
+    spec:
+      serviceAccountName: flask-sa
+
+      containers:
+      - name: flask-app
+        image: flask-demo:v1
+        imagePullPolicy: Never
+
+        ports:
+        - containerPort: 5000
+
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 1000
+
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 15
