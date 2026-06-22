@@ -9,7 +9,7 @@ app = Flask(__name__)
 def home():
     return f"""
     <h1>DevOps Practical Demo Application</h1>
-    <p>Version: V1</p>
+    <p>Version: V2 - CI/CD Test</p>
     <p>Current Time: {datetime.now()}</p>
     """
 
