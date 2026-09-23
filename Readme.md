@@ -51,7 +51,7 @@ The objective was to automate the entire software delivery lifecycle:
           │                    │                    │
           ▼                    ▼                    ▼
  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
- │ Docker Build │     │ Trivy Scan  │     │ Docker Push  │
+ │ Docker Build │     │  Trivy Scan  │     │ Docker Push  │
  └──────┬───────┘     └──────────────┘     └──────┬───────┘
         │                                          │
         └────────────────────┬─────────────────────┘
@@ -81,8 +81,9 @@ The objective was to automate the entire software delivery lifecycle:
 ```text
 devops-practical/
 │
-├── README.md
+├── Readme.md
 ├── Jenkinsfile
+├── .gitignore
 │
 ├── app/
 │   ├── app.py
@@ -93,9 +94,7 @@ devops-practical/
 │   ├── provider.tf
 │   ├── variables.tf
 │   ├── main.tf
-│   ├── output.tf
-│   ├── outputs.tf
-│   └── devops-practical-key.pub
+│   └── outputs.tf
 │
 ├── k8s/
 │   ├── deployment.yaml
@@ -510,23 +509,8 @@ Successfully implemented:
 
 ---
 
-# 📸 Screenshots
-
-Add screenshots here:
-
-* Jenkins Successful Pipeline
-* Docker Hub Repository
-* Terraform Outputs
-* Kubernetes Pods
-* Prometheus Targets
-* Grafana Dashboard
-
----
-
 # 👨‍💻 Author
 
-## Regards,
-
-### **Badhrinarayanan J**
-
-### **DevOps Engineer Enthusiast 🚀**
+**Badhrinarayanan J**<br>
+Application Engineer | AWS Certified Solutions Architect – Associate<br>
+[LinkedIn](https://linkedin.com/in/badhrinarayanan-j-629590199) · [GitHub](https://github.com/Badhrinarayanan-J)
